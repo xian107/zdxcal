@@ -1,7 +1,7 @@
 /*!
     @Name：日历
     @version：1.0.0
-    @Author：钟德贤
+    @Author：zhongdexian
     @Website：https://github.com/xian107/zdxcal
     @Time：2018-05-18
 */

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日历</title>
+  <link rel="stylesheet" href="cal.css">
+	<script src="jquery.js"></script>
+  <script src="zdxcal.js"></script>
+</head>
+<body>
+<div id="cal"></div>
+
+<script type="text/javascript">
+
+var cal = zdxCal();
+displayCalendar(cal);
+function displayCalendar(cal, title) {
+      cal.table.on('renderDay', function (event,detail) {
+        var daybox = $('<div class="daybox"><div class="daynum">' + detail.date.getDate() + '</div><div class="daycon"></div></div>');
+        detail.element.append(daybox);
+      });
+      cal.changeMonth(new Date());
+      cal.table.on('click',"td",function (event) {
+         cal.table.find("td").removeClass('selected')
+         $(this).addClass('selected')
+      });
+      $("#cal").html(cal.table);
+    }
+</script>
+
+</body>
+</html>
